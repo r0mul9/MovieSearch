@@ -6,4 +6,9 @@
     <string name="button3">Фильмы</string>
     <string name="button4">Сериалы</string>
     <string name="button5">Настройки</string>
+    <string name="menu_settings">Параметры</string>
+    <string name="menu_favorite">Избранное</string>
+    <string name="menu_selections">Подборки</string>
+    <string name="menu_watch_later">Смотреть позже</string>
+    <string name="toolBar_title">Поиск</string>
 </resources>
