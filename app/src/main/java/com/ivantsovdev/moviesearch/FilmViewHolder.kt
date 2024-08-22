@@ -1,6 +1,5 @@
 package com.ivantsovdev.moviesearch
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.ivantsovdev.moviesearch.databinding.FilmItemBinding
 
@@ -9,7 +8,7 @@ class FilmViewHolder(private val binding: FilmItemBinding) : RecyclerView.ViewHo
     private val poster = binding.poster
     private val description = binding.description
 
-    fun bind(film: MainActivity.Film) {
+    fun bind(film: Film) {
         binding.title.text = film.title
         binding.poster.setImageResource(film.poster)
         binding.description.text = film.description
