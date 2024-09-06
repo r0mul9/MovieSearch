@@ -5,8 +5,8 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class TopSpacingItemDecoration(private val paddingInDp: Int): RecyclerView.ItemDecoration() {
-    private val Int.converPx:Int
+class TopSpacingItemDecoration(private val paddingInDp: Int) : RecyclerView.ItemDecoration() {
+    private val Int.converPx: Int
         get() = (this * Resources.getSystem().displayMetrics.density).toInt()
 
     override fun getItemOffsets(

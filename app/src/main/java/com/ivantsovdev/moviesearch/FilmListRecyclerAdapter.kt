@@ -1,15 +1,13 @@
 package com.ivantsovdev.moviesearch
 
-import android.content.DialogInterface.OnClickListener
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.ivantsovdev.moviesearch.databinding.FilmItemBinding
 
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private val items = mutableListOf<MainActivity.Film>()
+    private val items = mutableListOf<Film>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,14 +28,14 @@ class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) :
         }
     }
 
-    fun addItems(list: List<MainActivity.Film>) {
+    fun addItems(list: List<Film>) {
         items.clear()
         items.addAll(list)
         notifyDataSetChanged()
     }
 
     interface OnItemClickListener {
-        fun click(film: MainActivity.Film)
+        fun click(film: Film)
     }
 
 }
