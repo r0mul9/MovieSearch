@@ -7,14 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ivantsovdev.moviesearch.databinding.FragmentFavoritesBinding
 import com.ivantsovdev.moviesearch.databinding.FragmentHomeBinding
 
 
-@SuppressLint("StaticFieldLeak")
-private var binding: FragmentHomeBinding? = null
-
-
 class HomeFragment : Fragment() {
+
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
     private val filmsDataBase = listOf(
         Film(
@@ -72,8 +73,9 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -82,7 +84,7 @@ class HomeFragment : Fragment() {
 
 
 
-        binding?.mainRecycler?.apply {
+        binding.mainRecycler.apply {
             filmsAdapter =
                 FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
 
