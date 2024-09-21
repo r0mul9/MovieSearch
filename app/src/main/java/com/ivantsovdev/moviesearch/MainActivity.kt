@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragment_placeholder, HomeFragment())
             .addToBackStack(null)
             .commit()
+
+
     }
 
     fun launchDetailFragment(film: Film) {
@@ -69,6 +71,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 }
 
 
