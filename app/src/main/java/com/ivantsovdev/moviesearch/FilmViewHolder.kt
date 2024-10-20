@@ -1,6 +1,7 @@
 package com.ivantsovdev.moviesearch
 
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ivantsovdev.moviesearch.databinding.FilmItemBinding
 
 class FilmViewHolder(private val binding: FilmItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -10,7 +11,14 @@ class FilmViewHolder(private val binding: FilmItemBinding) : RecyclerView.ViewHo
 
     fun bind(film: Film) {
         binding.title.text = film.title
-        binding.poster.setImageResource(film.poster)
+        //Указываем контейнер, в котором будет "жить" наша картинка
+        Glide.with(itemView)
+            //Загружаем сам ресурс
+            .load(film.poster)
+            //Центруем изображение
+            .centerCrop()
+            //Указываем ImageView, куда будем загружать изображение
+            .into(poster)
         binding.description.text = film.description
     }
 
