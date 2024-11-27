@@ -8,6 +8,8 @@ class FilmViewHolder(private val binding: FilmItemBinding) : RecyclerView.ViewHo
     private val title = binding.title
     private val poster = binding.poster
     private val description = binding.description
+    //Вот здесь мы находим в верстке наш прогресс бар для рейтинга
+    private val ratingDonut = binding.ratingDonut
 
     fun bind(film: Film) {
         binding.title.text = film.title
@@ -20,6 +22,7 @@ class FilmViewHolder(private val binding: FilmItemBinding) : RecyclerView.ViewHo
             //Указываем ImageView, куда будем загружать изображение
             .into(poster)
         binding.description.text = film.description
+        binding.ratingDonut.setProgress((film.rating * 10).toInt())
     }
 
 }
