@@ -42,7 +42,8 @@ android {
 }
 
 dependencies {
-
+    implementation (libs.glide)
+    annotationProcessor (libs.glide.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -51,6 +52,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.google.android.material:material:1.13.0-alpha05")
+    implementation(libs.material.v1130alpha05)
 
 }
