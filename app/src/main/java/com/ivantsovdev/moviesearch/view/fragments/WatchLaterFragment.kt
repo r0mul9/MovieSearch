@@ -1,12 +1,12 @@
-package com.ivantsovdev.moviesearch
+package com.ivantsovdev.moviesearch.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ivantsovdev.moviesearch.databinding.FragmentSelectionsBinding
 import com.ivantsovdev.moviesearch.databinding.FragmentWatchLaterBinding
+import com.ivantsovdev.moviesearch.utils.AnimationHelper
 
 
 class WatchLaterFragment : Fragment() {

@@ -2,10 +2,15 @@ package com.ivantsovdev.moviesearch
 
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ivantsovdev.moviesearch.databinding.ActivityMainBinding
+import com.ivantsovdev.moviesearch.domain.Film
+import com.ivantsovdev.moviesearch.view.fragments.DetailsFragment
+import com.ivantsovdev.moviesearch.view.fragments.FavoritesFragment
+import com.ivantsovdev.moviesearch.view.fragments.HomeFragment
+import com.ivantsovdev.moviesearch.view.fragments.SelectionsFragment
+import com.ivantsovdev.moviesearch.view.fragments.WatchLaterFragment
 
 
 class MainActivity : AppCompatActivity() {

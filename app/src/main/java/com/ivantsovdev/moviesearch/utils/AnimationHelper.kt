@@ -1,4 +1,4 @@
-package com.ivantsovdev.moviesearch
+package com.ivantsovdev.moviesearch.utils
 
 import android.app.Activity
 import android.view.View
