@@ -1,4 +1,4 @@
-package com.ivantsovdev.moviesearch
+package com.ivantsovdev.moviesearch.domain
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

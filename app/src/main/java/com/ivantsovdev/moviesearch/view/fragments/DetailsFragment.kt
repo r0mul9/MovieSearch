@@ -1,4 +1,4 @@
-package com.ivantsovdev.moviesearch
+package com.ivantsovdev.moviesearch.view.fragments
 
 
 import android.content.Intent
@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.ivantsovdev.moviesearch.R
 import com.ivantsovdev.moviesearch.databinding.FragmentDetailsBinding
+import com.ivantsovdev.moviesearch.domain.Film
 
 
 class DetailsFragment : Fragment() {

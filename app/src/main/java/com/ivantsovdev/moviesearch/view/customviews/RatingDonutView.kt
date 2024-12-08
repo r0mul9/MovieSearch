@@ -1,4 +1,4 @@
-package com.ivantsovdev.moviesearch
+package com.ivantsovdev.moviesearch.view.customviews
 
 import android.content.Context
 import android.graphics.Canvas
@@ -8,6 +8,7 @@ import android.graphics.RectF
 import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.View
+import com.ivantsovdev.moviesearch.R
 
 class RatingDonutView @JvmOverloads constructor(context: Context, attributeSet: AttributeSet? = null) : View(context, attributeSet) {
 
