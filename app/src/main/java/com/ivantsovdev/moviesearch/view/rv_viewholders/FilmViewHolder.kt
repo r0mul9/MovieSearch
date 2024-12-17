@@ -2,6 +2,7 @@ package com.ivantsovdev.moviesearch.view.rv_viewholders
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.ivantsovdev.moviesearch.data.ApiConstants
 import com.ivantsovdev.moviesearch.databinding.FilmItemBinding
 import com.ivantsovdev.moviesearch.domain.Film
 
@@ -18,7 +19,7 @@ class FilmViewHolder(private val binding: FilmItemBinding) : RecyclerView.ViewHo
         //Указываем контейнер, в котором будет "жить" наша картинка
         Glide.with(itemView)
             //Загружаем сам ресурс
-            .load(film.poster)
+            .load(ApiConstants.IMAGES_URL + "w342" + film.poster)
             //Центруем изображение
             .centerCrop()
             //Указываем ImageView, куда будем загружать изображение

@@ -1,9 +1,10 @@
-package com.ivantsovdev.moviesearch
+package com.ivantsovdev.moviesearch.view
 
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.ivantsovdev.moviesearch.R
 import com.ivantsovdev.moviesearch.databinding.ActivityMainBinding
 import com.ivantsovdev.moviesearch.domain.Film
 import com.ivantsovdev.moviesearch.view.fragments.DetailsFragment
