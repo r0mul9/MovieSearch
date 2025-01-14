@@ -1,13 +1,14 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id ("kotlin-parcelize")
-
+    id ("kotlin-kapt")
 }
 
 android {
     namespace = "com.ivantsovdev.moviesearch"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.ivantsovdev.moviesearch"
@@ -44,6 +45,7 @@ android {
 
 dependencies {
     implementation (libs.glide)
+    implementation(libs.transport.runtime)
     annotationProcessor (libs.glide.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -57,4 +59,6 @@ dependencies {
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
     implementation (libs.logging.interceptor)
+    implementation (libs.dagger)
+    kapt (libs.google.dagger.compiler)
 }
