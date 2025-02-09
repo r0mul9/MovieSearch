@@ -11,6 +11,7 @@ import com.ivantsovdev.moviesearch.view.fragments.DetailsFragment
 import com.ivantsovdev.moviesearch.view.fragments.FavoritesFragment
 import com.ivantsovdev.moviesearch.view.fragments.HomeFragment
 import com.ivantsovdev.moviesearch.view.fragments.SelectionsFragment
+import com.ivantsovdev.moviesearch.view.fragments.SettingsFragment
 import com.ivantsovdev.moviesearch.view.fragments.WatchLaterFragment
 
 
@@ -82,6 +83,12 @@ class MainActivity : AppCompatActivity() {
                     val tag = "selections"
                     val fragment = checkFragmentExistence(tag)
                     changeFragment(fragment ?: SelectionsFragment(), tag)
+                    true
+                }
+                R.id.settings -> {
+                    val tag = "settings"
+                    val fragment = checkFragmentExistence(tag)
+                    changeFragment( fragment?: SettingsFragment(), tag)
                     true
                 }
 
