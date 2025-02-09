@@ -1,5 +1,6 @@
 package com.ivantsovdev.moviesearch
 
+import android.app.AppComponentFactory
 import android.app.Application
 import com.ivantsovdev.moviesearch.di.AppComponent
 import com.ivantsovdev.moviesearch.di.DaggerAppComponent
@@ -26,4 +27,4 @@ class App : Application() {
         lateinit var instance: App
             private set
     }
-}1
+}
