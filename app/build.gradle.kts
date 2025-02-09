@@ -5,7 +5,9 @@ plugins {
     id ("kotlin-parcelize")
     id ("kotlin-kapt")
 }
-
+kapt {
+    generateStubs = true
+}
 android {
     namespace = "com.ivantsovdev.moviesearch"
     compileSdk = 35
@@ -61,5 +63,6 @@ dependencies {
     implementation (libs.converter.gson)
     implementation (libs.logging.interceptor)
     implementation (libs.dagger)
-    kapt (libs.google.dagger.compiler)
+    annotationProcessor (libs.google.dagger.compiler)
+
 }

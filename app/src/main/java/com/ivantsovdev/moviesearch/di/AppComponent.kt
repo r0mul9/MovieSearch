@@ -8,6 +8,7 @@ import com.ivantsovdev.moviesearch.viewmodel.SettingsFragmentViewModel
 import dagger.Component
 import javax.inject.Singleton
 
+
 @Singleton
 @Component(
     //Внедряем все модули, нужные для этого компонента

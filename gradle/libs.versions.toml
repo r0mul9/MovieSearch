@@ -1,31 +1,36 @@
 [versions]
 agp = "8.5.2"
-compiler = "4.11.0"
-converterGson = "2.6.0"
-dagger = "2.37"
-daggerCompiler = "2.37"
+compiler = "4.16.0"
+converterGson = "2.11.0"
+dagger = "2.55"
+daggerCompiler = "2.55"
 daggerCompilerVersion = "2.37"
 daggerVersion = "2.37"
-glide = "4.11.0"
+glide = "4.16.0"
+googleDaggerCompiler = "2.37"
+googleDaggerCompilerVersion = "2.52"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
-loggingInterceptor = "3.12.6"
+loggingInterceptor = "4.12.0"
 material = "1.12.0"
-activity = "1.9.3"
+activity = "1.10.0"
 constraintlayout = "2.2.0"
-materialVersion = "1.13.0-alpha09"
-retrofit = "2.9.0"
+materialVersion = "1.13.0-alpha10"
+retrofit = "2.11.0"
 transportRuntime = "4.0.0"
 swiperefreshlayout = "1.1.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler-v227 = { module = "com.google.dagger:dagger-compiler", version.ref = "googleDaggerCompiler" }
+dagger-compiler-v252 = { module = "com.google.dagger:dagger-compiler", version.ref = "googleDaggerCompilerVersion" }
 dagger-compiler-v29 = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerCompilerVersion" }
 dagger-v29 = { module = "com.google.dagger:dagger", version.ref = "daggerVersion" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
