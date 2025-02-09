@@ -46,6 +46,7 @@ android {
 dependencies {
     implementation (libs.glide)
     implementation(libs.transport.runtime)
+    implementation(libs.androidx.swiperefreshlayout)
     annotationProcessor (libs.glide.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
