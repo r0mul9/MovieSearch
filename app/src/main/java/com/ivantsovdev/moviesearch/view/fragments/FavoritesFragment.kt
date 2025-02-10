@@ -10,7 +10,7 @@ import com.ivantsovdev.moviesearch.view.rv_adapters.FilmListRecyclerAdapter
 import com.ivantsovdev.moviesearch.view.MainActivity
 import com.ivantsovdev.moviesearch.view.rv_adapters.TopSpacingItemDecoration
 import com.ivantsovdev.moviesearch.databinding.FragmentFavoritesBinding
-import com.ivantsovdev.moviesearch.domain.Film
+import com.ivantsovdev.moviesearch.data.Entity.Film
 import com.ivantsovdev.moviesearch.utils.AnimationHelper
 
 
@@ -34,7 +34,11 @@ class FavoritesFragment : Fragment() {
         //Получаем список при транзакции фрагмента
         val favoritesList: List<Film> = emptyList()
 
-        AnimationHelper.performFragmentCircularRevealAnimation(binding.favoritesFragmentRoot, requireActivity(),2)
+        AnimationHelper.performFragmentCircularRevealAnimation(
+            binding.favoritesFragmentRoot,
+            requireActivity(),
+            2
+        )
 
         binding.favoritesRecycler
             .apply {

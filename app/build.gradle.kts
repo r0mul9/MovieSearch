@@ -49,6 +49,7 @@ dependencies {
     implementation (libs.glide)
     implementation(libs.transport.runtime)
     implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.androidx.room.common)
     annotationProcessor (libs.glide.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -63,6 +64,7 @@ dependencies {
     implementation (libs.converter.gson)
     implementation (libs.logging.interceptor)
     implementation (libs.dagger)
-    annotationProcessor (libs.google.dagger.compiler)
-
+    kapt (libs.google.dagger.compiler)
+    implementation (libs.androidx.room.runtime)
+    kapt (libs.androidx.room.compiler)
 }

@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.ivantsovdev.moviesearch.R
 import com.ivantsovdev.moviesearch.data.ApiConstants
 import com.ivantsovdev.moviesearch.databinding.FragmentDetailsBinding
-import com.ivantsovdev.moviesearch.domain.Film
+import com.ivantsovdev.moviesearch.data.Entity.Film
 
 
 class DetailsFragment : Fragment() {
