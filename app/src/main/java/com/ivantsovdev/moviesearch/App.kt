@@ -1,6 +1,6 @@
 package com.ivantsovdev.moviesearch
 
-import android.app.AppComponentFactory
+
 import android.app.Application
 import com.ivantsovdev.moviesearch.di.AppComponent
 import com.ivantsovdev.moviesearch.di.DaggerAppComponent
