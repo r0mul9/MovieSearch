@@ -1,6 +1,7 @@
 package com.ivantsovdev.moviesearch.domain
 
 
+import androidx.lifecycle.LiveData
 import com.ivantsovdev.moviesearch.data.*
 import com.ivantsovdev.moviesearch.data.Entity.API
 import com.ivantsovdev.moviesearch.data.Entity.Film
@@ -31,7 +32,7 @@ class Interactor(
                     list.forEach {
                         repo.putToDb(list)
                     }
-                    callback.onSuccess(list)
+                    callback.onSuccess()
                 }
 
                 override fun onFailure(call: Call<TmdbResultsDto>, t: Throwable) {
@@ -50,5 +51,6 @@ class Interactor(
     //Метод для получения настроек
     fun getDefaultCategoryFromPreferences() = preferences.getDefaultCategory()
 
-    fun getFilmsFromDB(): List<Film> = repo.getAllFromDB()
+    fun getFilmsFromDB(): LiveData<List<Film>> = repo.getAllFromDB()
+
 }

@@ -66,5 +66,5 @@ dependencies {
     implementation (libs.dagger)
     kapt (libs.google.dagger.compiler)
     implementation (libs.androidx.room.runtime)
-    kapt (libs.androidx.room.compiler)
+
 }
