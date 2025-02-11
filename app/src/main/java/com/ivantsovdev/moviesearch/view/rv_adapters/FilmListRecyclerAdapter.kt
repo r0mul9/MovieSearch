@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ivantsovdev.moviesearch.view.rv_viewholders.FilmViewHolder
 import com.ivantsovdev.moviesearch.databinding.FilmItemBinding
-import com.ivantsovdev.moviesearch.domain.Film
+import com.ivantsovdev.moviesearch.data.Entity.Film
 
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

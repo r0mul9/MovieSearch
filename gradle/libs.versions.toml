@@ -23,10 +23,13 @@ materialVersion = "1.13.0-alpha10"
 retrofit = "2.11.0"
 transportRuntime = "4.0.0"
 swiperefreshlayout = "1.1.0"
+roomCommon = "2.6.1"
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler" }
+androidx-room-runtime = { module = "androidx.room:room-runtime" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 dagger-compiler-v227 = { module = "com.google.dagger:dagger-compiler", version.ref = "googleDaggerCompiler" }
@@ -48,6 +51,7 @@ material-v1130alpha05 = { module = "com.google.android.material:material", versi
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 transport-runtime = { group = "com.google.android.datatransport", name = "transport-runtime", version.ref = "transportRuntime" }
 androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
+androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

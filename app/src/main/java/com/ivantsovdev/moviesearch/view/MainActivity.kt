@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ivantsovdev.moviesearch.R
 import com.ivantsovdev.moviesearch.databinding.ActivityMainBinding
-import com.ivantsovdev.moviesearch.domain.Film
+import com.ivantsovdev.moviesearch.data.Entity.Film
 import com.ivantsovdev.moviesearch.view.fragments.DetailsFragment
 import com.ivantsovdev.moviesearch.view.fragments.FavoritesFragment
 import com.ivantsovdev.moviesearch.view.fragments.HomeFragment
@@ -85,10 +85,11 @@ class MainActivity : AppCompatActivity() {
                     changeFragment(fragment ?: SelectionsFragment(), tag)
                     true
                 }
+
                 R.id.settings -> {
                     val tag = "settings"
                     val fragment = checkFragmentExistence(tag)
-                    changeFragment( fragment?: SettingsFragment(), tag)
+                    changeFragment(fragment ?: SettingsFragment(), tag)
                     true
                 }
 

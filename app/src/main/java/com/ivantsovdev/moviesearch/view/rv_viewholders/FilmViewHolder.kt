@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ivantsovdev.moviesearch.data.ApiConstants
 import com.ivantsovdev.moviesearch.databinding.FilmItemBinding
-import com.ivantsovdev.moviesearch.domain.Film
+import com.ivantsovdev.moviesearch.data.Entity.Film
 
 class FilmViewHolder(private val binding: FilmItemBinding) : RecyclerView.ViewHolder(binding.root) {
     private val title = binding.title

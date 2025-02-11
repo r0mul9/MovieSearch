@@ -13,7 +13,7 @@ import com.ivantsovdev.moviesearch.view.rv_adapters.FilmListRecyclerAdapter
 import com.ivantsovdev.moviesearch.view.MainActivity
 import com.ivantsovdev.moviesearch.view.rv_adapters.TopSpacingItemDecoration
 import com.ivantsovdev.moviesearch.databinding.FragmentHomeBinding
-import com.ivantsovdev.moviesearch.domain.Film
+import com.ivantsovdev.moviesearch.data.Entity.Film
 import com.ivantsovdev.moviesearch.utils.AnimationHelper
 import com.ivantsovdev.moviesearch.viewmodel.HomeFragmentViewModel
 import java.util.Locale
