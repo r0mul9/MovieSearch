@@ -66,5 +66,8 @@ dependencies {
     implementation (libs.dagger)
     kapt (libs.google.dagger.compiler)
     implementation (libs.androidx.room.runtime)
+    implementation (libs.kotlinx.coroutines.core)
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.androidx.navigation.fragment.ktx)
 
 }
