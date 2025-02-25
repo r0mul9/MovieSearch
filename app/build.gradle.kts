@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id ("kotlin-parcelize")
     id ("kotlin-kapt")
+
 }
 kapt {
     generateStubs = true
@@ -70,5 +71,9 @@ dependencies {
     implementation (libs.kotlinx.coroutines.android)
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.androidx.room.ktx)
-
+    implementation (libs.room.runtime)
+    implementation (libs.androidx.room.rxjava3)
+    kapt (libs.room.compiler)
+    implementation (libs.rxandroid)
+    implementation (libs.rxjava)
 }
