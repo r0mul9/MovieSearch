@@ -16,7 +16,11 @@ import com.ivantsovdev.moviesearch.view.rv_adapters.TopSpacingItemDecoration
 import com.ivantsovdev.moviesearch.databinding.FragmentHomeBinding
 import com.ivantsovdev.moviesearch.data.Entity.Film
 import com.ivantsovdev.moviesearch.utils.AnimationHelper
+import com.ivantsovdev.moviesearch.utils.AutoDisposable
+import com.ivantsovdev.moviesearch.utils.addTo
 import com.ivantsovdev.moviesearch.viewmodel.HomeFragmentViewModel
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
@@ -37,6 +41,8 @@ class HomeFragment : Fragment() {
         ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
     }
 
+    private val autoDisposable = AutoDisposable()
+
     private var filmsDataBase = listOf<Film>()
         //Используем backing field
         set(value) {
@@ -50,6 +56,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        autoDisposable.bindTo(lifecycle)
         retainInstance = true
     }
 
@@ -66,19 +73,22 @@ class HomeFragment : Fragment() {
         //Кладем нашу БД в RV
         scope = CoroutineScope(Dispatchers.IO).also { scope ->
             scope.launch {
-                viewModel.filmsListData.collect {
-                    withContext(Dispatchers.Main) {
-                        filmsAdapter.addItems(it)
-                        filmsDataBase = it
+                viewModel.filmsListData
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe { list ->
+                        filmsAdapter.addItems(list)
+                        filmsDataBase = list
                     }
-                }
+                    .addTo(autoDisposable)
             }
             scope.launch {
-                for (element in viewModel.showProgressBar) {
-                    launch(Dispatchers.Main) {
-                        binding.progressBar.isVisible = element
+                viewModel.showProgressBar
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe {
+                        binding.progressBar.isVisible = it
                     }
-                }
             }
         }
         super.onViewCreated(view, savedInstanceState)
@@ -136,10 +146,8 @@ class HomeFragment : Fragment() {
         })
 
 
-
-
-
     }
+
     override fun onStop() {
         super.onStop()
         scope.cancel()
@@ -158,7 +166,6 @@ class HomeFragment : Fragment() {
 
     }
 
-    
 
 }
 
