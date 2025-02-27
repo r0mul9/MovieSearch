@@ -47,33 +47,54 @@ android {
 }
 
 dependencies {
+
+    implementation (libs.kotlin.stdlib)
+    implementation (libs.androidx.core.ktx)
+    implementation (libs.androidx.appcompat)
+    implementation (libs.androidx.constraintlayout)
+    implementation (libs.androidx.cardview)
+    implementation (libs.androidx.legacy.support.v4)
+    implementation (libs.androidx.fragment.ktx)
+
+    //Tests
+    testImplementation (libs.junit)
+    testImplementation (libs.hamcrest.library)
+    androidTestImplementation (libs.androidx.junit)
+    androidTestImplementation (libs.androidx.espresso.core)
+    androidTestImplementation (libs.androidx.espresso.contrib)
+
+    //MaterialDesign
+    implementation (libs.material.v1130alpha05)
+
+    //Coordinator layout
+    implementation (libs.androidx.coordinatorlayout)
+
+    //Glide
     implementation (libs.glide)
-    implementation(libs.transport.runtime)
-    implementation(libs.androidx.swiperefreshlayout)
-    implementation(libs.androidx.room.common)
     annotationProcessor (libs.glide.compiler)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.material.v1130alpha05)
+
+    //Retrofit
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
     implementation (libs.logging.interceptor)
+
+    //Dagger
     implementation (libs.dagger)
     kapt (libs.google.dagger.compiler)
-    implementation (libs.androidx.room.runtime)
+
+    //Room
+
+    implementation (libs.androidx.room.room.runtime2)
+    implementation (libs.androidx.room.rxjava3)
+    kapt (libs.androidx.room.room.compiler3)
+
+    //Coroutines
     implementation (libs.kotlinx.coroutines.core)
     implementation (libs.kotlinx.coroutines.android)
-    implementation (libs.androidx.navigation.fragment.ktx)
-    implementation (libs.androidx.room.ktx)
-    implementation (libs.room.runtime)
-    implementation (libs.androidx.room.rxjava3)
-    kapt (libs.room.compiler)
+
+    //RxJava
     implementation (libs.rxandroid)
     implementation (libs.rxjava)
+    implementation (libs.rxkotlin)
+    implementation (libs.rxjava3.retrofit.adapter)
 }
