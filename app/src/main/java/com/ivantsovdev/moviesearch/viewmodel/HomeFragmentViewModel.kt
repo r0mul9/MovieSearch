@@ -21,8 +21,6 @@ class HomeFragmentViewModel : ViewModel() {
     val showProgressBar: BehaviorSubject<Boolean>
 
 
-
-
     //Инициализируем интерактор
 
 
@@ -42,5 +40,6 @@ class HomeFragmentViewModel : ViewModel() {
         fun onFailure()
     }
 
+    fun getSearchResult(search: String) = interactor.getSearchResultFromApi(search)
 
 }
