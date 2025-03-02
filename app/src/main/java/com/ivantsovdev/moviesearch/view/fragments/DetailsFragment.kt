@@ -20,7 +20,7 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.ivantsovdev.moviesearch.R
-import com.ivantsovdev.moviesearch.data.ApiConstants
+import com.ivantsovdev.remote_module.entity.ApiConstants
 import com.ivantsovdev.moviesearch.databinding.FragmentDetailsBinding
 import com.ivantsovdev.moviesearch.data.Entity.Film
 import com.ivantsovdev.moviesearch.viewmodel.DetailsFragmentViewModel
@@ -93,7 +93,7 @@ class DetailsFragment : Fragment() {
         val film = arguments?.get("film") as Film
         binding.detailsToolbar.title = film.title
         Glide.with(this)
-            .load(ApiConstants.IMAGES_URL + "w780" + film.poster)
+            .load(com.ivantsovdev.remote_module.entity.ApiConstants.IMAGES_URL + "w780" + film.poster)
             .centerCrop()
             .into(binding.detailsPoster)
         binding.detailsDescription.text = film.description
@@ -117,7 +117,7 @@ class DetailsFragment : Fragment() {
             binding.progressBar.isVisible = true
             //Создаем через async, так как нам нужен результат от работы, то есть Bitmap
             val job = scope.async {
-                viewModel.loadWallpaper(ApiConstants.IMAGES_URL + "original" + film.poster)
+                viewModel.loadWallpaper(com.ivantsovdev.remote_module.entity.ApiConstants.IMAGES_URL + "original" + film.poster)
             }
             //Сохраняем в галерею, как только файл загрузится
             saveToGallery(job.await())

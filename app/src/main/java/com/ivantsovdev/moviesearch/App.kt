@@ -6,7 +6,7 @@ import com.ivantsovdev.moviesearch.di.AppComponent
 import com.ivantsovdev.moviesearch.di.DaggerAppComponent
 import com.ivantsovdev.moviesearch.di.modules.DatabaseModule
 import com.ivantsovdev.moviesearch.di.modules.DomainModule
-import com.ivantsovdev.moviesearch.di.modules.RemoteModule
+
 
 class App : Application() {
     lateinit var dagger: AppComponent
@@ -15,8 +15,9 @@ class App : Application() {
         super.onCreate()
         instance = this
         //Создаем компонент
+        val remoteProvider = DaggerRemoteComponent.create()
         dagger = DaggerAppComponent.builder()
-            .remoteModule(RemoteModule())
+            .remoteProvider(remoteProvider)
             .databaseModule(DatabaseModule())
             .domainModule(DomainModule(this))
             .build()
