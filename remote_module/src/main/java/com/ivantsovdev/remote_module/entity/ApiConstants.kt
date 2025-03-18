@@ -1,4 +1,4 @@
-package com.ivantsovdev.moviesearch.data
+package com.ivantsovdev.remote_module.entity
 
 object ApiConstants {
     const val BASE_URL = "https://api.themoviedb.org/"

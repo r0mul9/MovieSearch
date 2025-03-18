@@ -3,7 +3,7 @@ package com.ivantsovdev.moviesearch.di.modules
 import android.content.Context
 import com.ivantsovdev.moviesearch.data.MainRepository
 import com.ivantsovdev.moviesearch.data.PreferenceProvider
-import com.ivantsovdev.moviesearch.data.TmdbApi
+import com.ivantsovdev.remote_module.TmdbApi
 import com.ivantsovdev.moviesearch.domain.Interactor
 import dagger.Module
 import dagger.Provides
@@ -25,7 +25,7 @@ class DomainModule(val context: Context) {
     @Provides
     fun provideInteractor(
         repository: MainRepository,
-        tmdbApi: TmdbApi,
+        tmdbApi: com.ivantsovdev.remote_module.TmdbApi,
         preferenceProvider: PreferenceProvider
     ) = Interactor(repo = repository, retrofitService = tmdbApi, preferences = preferenceProvider)
 }
