@@ -1,12 +1,16 @@
 package com.ivantsovdev.moviesearch.view
 
 
+import android.content.BroadcastReceiver
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ivantsovdev.moviesearch.R
 import com.ivantsovdev.moviesearch.databinding.ActivityMainBinding
 import com.ivantsovdev.moviesearch.data.Entity.Film
+import com.ivantsovdev.moviesearch.receivers.ConnectionChecker
 import com.ivantsovdev.moviesearch.view.fragments.DetailsFragment
 import com.ivantsovdev.moviesearch.view.fragments.FavoritesFragment
 import com.ivantsovdev.moviesearch.view.fragments.HomeFragment
@@ -18,6 +22,7 @@ import com.ivantsovdev.moviesearch.view.fragments.WatchLaterFragment
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var receiver: BroadcastReceiver
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +38,22 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
 
+        receiver = ConnectionChecker()
+        val filters = IntentFilter().apply {
+            addAction(Intent.ACTION_POWER_CONNECTED)
+            addAction(Intent.ACTION_BATTERY_LOW)
+        }
+
+        registerReceiver(receiver, filters)
+
 
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(receiver)
+    }
+
 
     fun launchDetailFragment(film: Film) {
         val bundle = Bundle()
