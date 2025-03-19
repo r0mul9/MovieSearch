@@ -23,6 +23,7 @@ import com.ivantsovdev.moviesearch.R
 import com.ivantsovdev.remote_module.entity.ApiConstants
 import com.ivantsovdev.moviesearch.databinding.FragmentDetailsBinding
 import com.ivantsovdev.moviesearch.data.Entity.Film
+import com.ivantsovdev.moviesearch.view.notifications.NotificationHelper
 import com.ivantsovdev.moviesearch.viewmodel.DetailsFragmentViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -80,6 +81,10 @@ class DetailsFragment : Fragment() {
         }
         binding.detailsFabDownloadWp.setOnClickListener {
             performAsyncLoadOfPoster()
+        }
+
+        binding.detailsFabWatchLater.setOnClickListener {
+            NotificationHelper.createNotification(requireContext(), film)
         }
     }
 
