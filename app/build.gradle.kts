@@ -55,6 +55,7 @@ dependencies {
     implementation (libs.androidx.cardview)
     implementation (libs.androidx.legacy.support.v4)
     implementation (libs.androidx.fragment.ktx)
+    implementation(project(":remote_module"))
 
 
     //Tests
